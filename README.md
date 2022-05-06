@@ -1,11 +1,8 @@
 # Nightline Association WordPress Plugins
 
-We provide plugins to integrate our tools into your WordPress websites:
-- nla-im-button-embed
-
 ---
 
-## [Instant Messaging Button Embed (Plugin)](https://github.com/nightline-association/wordpress-plugins/nla-im-button-embed)
+## Instant Messaging Button Embed (Plugin)
 
 You can use this plugin to allow people visiting your WordPress website to see when your IM service is open, and when it is open, allow them to start a new chat with you.
 
