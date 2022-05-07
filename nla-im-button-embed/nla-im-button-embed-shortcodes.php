@@ -32,11 +32,15 @@ function nla_im_button_embed_shortcode($atts = [], $content = null, $tag = '')
         }
 
         if ($data->open) {
-            return "<form action='{$baseUrl}/chats' class='wp-block-buttons has-text-align-{$atts['align']}' method='POST' target='_blank'>
+            if ($data->away) {
+                return "<div>{$options['away_text']}</div>";
+            } else {
+                return "<form action='{$baseUrl}/chats' class='wp-block-buttons' method='POST' target='_blank'>
     <div class='wp-block-button'>
         <input class='wp-block-button__link' type='submit' value='{$options['open_text']}'/>
     </div>
 </form>";
+            }
         } else {
             return "<div class='has-text-align-{$atts['align']}'>{$options['closed_text']}</div>";
         }

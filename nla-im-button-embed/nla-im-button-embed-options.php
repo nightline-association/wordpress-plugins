@@ -1,7 +1,7 @@
 <?php
 
 function nla_im_embed_config_options() {
-    return [
+    return array(
         'base_url' => [
             'title' => 'Base URL',
             'page' => 'nla_im_embed_plugin',
@@ -26,5 +26,13 @@ function nla_im_embed_config_options() {
             'description' => 'The text that appears when the IM Space is closed.',
             'size' => 'large',
         ],
-    ];
+        'away_text' => [
+            'title' => 'IM away text',
+            'page' => 'nla_im_embed_plugin',
+            'section' => 'settings',
+            'default' => 'We are busy right, please come back in a bit.',
+            'description' => 'The text that appears when the IM Space is away.',
+            'size' => 'large',
+        ],
+    );
 }
