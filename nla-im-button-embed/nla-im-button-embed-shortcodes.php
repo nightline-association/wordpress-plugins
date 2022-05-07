@@ -32,17 +32,17 @@ function nla_im_button_embed_shortcode($atts = [], $content = null, $tag = '')
         }
 
         if ($data->open) {
-            if ($data->away) {
-                return "<div>{$options['away_text']}</div>";
+            if (property_exists($data, 'away') && $data->away) {
+                return "<div class='nla-im-embed-away has-text-align-{$atts['align']}'>{$options['away_text']}</div>";
             } else {
-                return "<form action='{$baseUrl}/chats' class='wp-block-buttons' method='POST' target='_blank'>
+                return "<form action='{$baseUrl}/chats' class='wp-block-buttons nla-im-embed-open' method='POST' target='_blank'>
     <div class='wp-block-button'>
-        <input class='wp-block-button__link' type='submit' value='{$options['open_text']}'/>
+        <input class='wp-block-button__link nla-im-embed-open-chat-btn' type='submit' value='{$options['open_text']}'/>
     </div>
 </form>";
             }
         } else {
-            return "<div class='has-text-align-{$atts['align']}'>{$options['closed_text']}</div>";
+            return "<div class='nla-im-embed-closed has-text-align-{$atts['align']}'>{$options['closed_text']}</div>";
         }
     }
 }
