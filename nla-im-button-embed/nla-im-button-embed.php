@@ -19,3 +19,8 @@ require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-shortcodes.php';
 if ( ( defined( 'WP_CLI' ) && WP_CLI ) || is_admin() ) {
 	require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-admin.php';
 }
+
+if ( ! function_exists( 'add_action' ) ) {
+	echo "Hello! I'm just a plugin. Not much I can when called directly.";
+	exit();
+}
