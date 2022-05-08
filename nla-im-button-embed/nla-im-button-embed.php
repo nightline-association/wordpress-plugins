@@ -14,7 +14,7 @@ define( 'NLA_TOOLS__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'NLA_TOOLS__PLUGIN_VER', '0.2.1' );
 
 if ( ! function_exists( 'add_action' ) ) {
-	echo "Hello! I'm just a plugin. Not much I can when called directly.";
+	echo "Hello! I'm just a plugin. Not much I can do when called directly.";
 	exit();
 }
 
