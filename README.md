@@ -37,3 +37,7 @@ You can access the IM Embed Settings page in the WordPress Dashboard by going to
 #### Style changes
 
 - You can customise the alignment (left, right or center) of the embed by adding `align="left"`, `align="right"` or `align="center"` to your shortcode. For instance, `[im_embed_btn im-code="YOUR_CODE" align="center"]`.
+
+## License
+
+GNU General Public License, version 2 (GPL-2)
