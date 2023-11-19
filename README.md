@@ -38,6 +38,30 @@ You can access the IM Embed Settings page in the WordPress Dashboard by going to
 
 - You can customise the alignment (left, right or center) of the embed by adding `align="left"`, `align="right"` or `align="center"` to your shortcode. For instance, `[im_embed_btn im-code="YOUR_CODE" align="center"]`.
 
+## Find my Nightline (Plugin)
+
+You can use this plugin to allow people to find the Nightline services that covers their higher education institution.
+It does this by pinging [Portal](https://portal.nightline.ac.uk) for the relevant data. It is the same as the Find my
+Nightline tool displayed on the [Nightline Association homepage](https://www.nightline.ac.uk).
+
+### Requirements
+- **Access to your WordPress Admin and plugin page**, so that you can install the plugin.
+
+### Setting it up
+1. Download the latest version of `nla-find-my-nightline.zip` from the [**NLA Find my Nightline Plugin**, listed under 'Assets', from the Releases page](https://github.com/nightline-association/wordpress-plugins/releases).
+2. Log into the **Admin** panel of your WordPress website.
+3. On the menu bar, click **Plugins**.
+4. On the plugins page, click **Add New**, and then **Upload Plugin**.
+5. Upload the `nla-find-my-nightline.zip` file, and then click **Install Now**.
+6. Once the plugin hs been installed, click **Activate Now**.
+
+### Add the widget to your website
+1. Log into the **Admin** panel of your WordPress website.
+2. Navigate to the page you want to add the Find my Nightline component to, and click **Edit Page**.
+3. Click the **+** button in the top-left corner, and search the block list for **Shortcode**, and drag it to where you want it on the page.
+4. To the Shortcode block, add the text: `[find_my_nightline]`.
+5. Click **Update** in the top-right corner to publish the page.
+
 ## License
 
 GNU General Public License, version 2 (GPL-2)
