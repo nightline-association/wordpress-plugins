@@ -34,7 +34,7 @@ watch(rawSearchTerm, async () => {
 <template>
   <div id="main">
     <h1 class="title">Find Your Nightline</h1>
-    <h5 class="title">Start typing your University's name to find your Nightline</h5>
+    <p class="title">Start typing your University's name to find your Nightline</p>
 
     <input
         v-model="rawSearchTerm"
@@ -45,7 +45,7 @@ watch(rawSearchTerm, async () => {
     />
 
     <section v-if="!showApology && matches.length > 0 && rawSearchTerm.length > 0">
-      <h4 id="results-summary-text">Showing results for: {{ rawSearchTerm }}</h4>
+      <h2 id="results-summary-text">Showing results for: {{ rawSearchTerm }}</h2>
 
       <ul id="results-list">
         <template v-for="institution in matches" :key="institution.name">
@@ -65,9 +65,9 @@ watch(rawSearchTerm, async () => {
     </section>
 
     <section v-else-if="showApology">
-      <h1 class="title" id="no-nightline-text">
+      <h2 class="title" id="no-nightline-text">
         Unfortunately, your institution is not covered by a Nightline.
-      </h1>
+      </h2>
 
       <p>
         You could contact <a :href="samaritansUrl" target="_blank">Samaritans</a> instead.
@@ -80,7 +80,7 @@ watch(rawSearchTerm, async () => {
     </section>
 
     <section v-else-if="rawSearchTerm.length > 0">
-      <h4 id="results-summary-text">No results found. Try full institution name?</h4>
+      <p id="results-summary-text">No results found. Try full institution name?</p>
     </section>
   </div>
 </template>
