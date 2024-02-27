@@ -62,6 +62,14 @@ Nightline tool displayed on the [Nightline Association homepage](https://www.nig
 4. To the Shortcode block, add the text: `[find_my_nightline]`.
 5. Click **Update** in the top-right corner to publish the page.
 
+## Development
+You can use [Composer](https://getcomposer.org) to install the necessary linting and code analysis tools for working with WordPress code. The minimum PHP version we target is regrettably **7.4.**
+
+The code is formatted in compliance with the [WordPress coding standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/). One day they'll switch to PER, but that day is not today.
+
+**NB:** It is very important to bump version numbers when you have updated a specific plugin. For plugins with compiled source code included in the distributable, such as _Find my Nightline_, it is vital to ensure that any changes
+have been compiled and committed for release.
+
 ## License
 
 GNU General Public License, version 2 (GPL-2)
