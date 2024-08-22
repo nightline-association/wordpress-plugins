@@ -10,7 +10,7 @@
  * Plugin Name:  NLA Find My Nightline Plugin
  * Plugin URI:   https://www.github.com/nightline-association/wordpress-plugins
  * Description:  Find Nightlines by the names of the institutions that they cover.
- * Version:      0.1.1
+ * Version:      0.2.0
  * Author:       Nightline Association
  * Author URI:   https://www.nightline.ac.uk
  * License:      GPL2
