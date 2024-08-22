@@ -34,47 +34,47 @@ watch(rawSearchTerm, async () => {
 <template>
   <div id="main">
     <h1 class="title">Find Your Nightline</h1>
-    <p class="title">Start typing your University's name to find your Nightline</p>
+    <p class="title">Start typing the name of your university to find your Nightline.</p>
 
     <input
         v-model="rawSearchTerm"
         type="text"
         id="search-box"
-        placeholder="Your institution here"
+        placeholder="University of..."
         autocomplete="off"
     />
 
     <section v-if="!showApology && matches.length > 0 && rawSearchTerm.length > 0">
-      <h2 id="results-summary-text">Showing results for: {{ rawSearchTerm }}</h2>
+      <p class="results-summary-text">Showing results for: <span>{{ rawSearchTerm }}</span></p>
 
-      <ul id="results-list">
+      <ul class="results-list">
         <template v-for="institution in matches" :key="institution.name">
           <li v-if="institution.nightline" class="result">
             <a :href="institution.nightlineWebsite ?? '#'" target="_blank">
-              <h3>{{ institution.name }}</h3>
-              <h4>Nightline: {{ institution.nightline }}</h4>
+              <p class="institution">{{ institution.name }}</p>
+              <p class="nightline">Nightline: {{ institution.nightline }}</p>
             </a>
           </li>
 
           <li @click="showApology = true" v-else class="result">
-            <h3>{{ institution.name }}</h3>
+            <p class="institution">{{ institution.name }}</p>
           </li>
         </template>
 
       </ul>
     </section>
 
-    <section v-else-if="showApology">
-      <h2 class="title" id="no-nightline-text">
-        Unfortunately, your institution is not covered by a Nightline.
+    <section class="no-nightline" v-else-if="showApology">
+      <h2>
+        Unfortunately, your institution is not yet covered by a Nightline.
       </h2>
 
       <p>
-        You could contact <a :href="samaritansUrl" target="_blank">Samaritans</a> instead.
+        To speak to someone, you could <a :href="samaritansUrl" target="_blank">contact the Samaritans</a> instead.
       </p>
 
       <p>
-        Or, refer to <a :href="setupUrl" target="_blank">our setup guidance</a> if you are interested in
+        Alternatively, you can refer to <a :href="setupUrl" target="_blank">our setup guidance</a> if you are interested in
         setting up a Nightline.
       </p>
     </section>
@@ -178,60 +178,65 @@ a {
 
 /* Typography */
 p {
-  font-family: Verdana, Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Lexend Deca',Helvetica,Arial,Lucida,sans-serif;
   color: #333;
-  font-size: 16px; /* Adjust as needed */
+  font-size: 16px;
+  line-height: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'ArialRoundedMTBold', 'arial rounded mt 700', Arial, Helvetica, sans-serif;
+  font-family: 'Lexend Deca',Helvetica,Arial,Lucida,sans-serif;
   font-weight: 700;
-  line-height: 1.6;
-  color: #353391;
+  color: #133c8c;
 }
 
 h1 {
-  font-size: 24px;
-  letter-spacing: .033em;
+  font-size: 40px;
 }
 
-h2 {
+p.results-summary-text {
   font-size: 16px;
+  color: #133c8c;
 }
 
-h3 {
-  font-size: 14px;
+.results-summary-text span{
+  color: #3b3b3b;
 }
 
-h4, h5 {
-  font-size: 12px;
+p.institution {
+  font-weight: 700;
+  color: #133c8c;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
 }
 
-h6 {
-  font-size: 8px;
+p.nightline {
+  font-weight: 700;
+  color: #133c8c;
+  font-size: 16px;
+  padding: 0px 10px 5px 10px;
 }
 
 /* Main content container */
 div#main {
   transition: ease-in-out all 0.3s;
-  margin: 140px auto 20px;
+  margin: 40px auto 40px;
   max-width: 550px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 div#main:focus-within {
-  margin: 40px auto 20px;
+  margin: 40px auto 40px;
 }
 
 /* Search box styling */
 input#search-box {
-  width: calc(100% - 30px);
+  width: 100%;
   height: 25px;
-  padding: 7px 14px;
-  border: 2px solid #AED3EE;
-  color: #322B7B;
+  padding: 20px 10px;
+  border: 3px solid #133c8c;
+  color: #133c8c;
   margin: 15px 0;
   border-radius: 2px;
   outline: none;
@@ -243,38 +248,42 @@ input#search-box:hover, input#search-box:focus {
   box-shadow: rgba(0, 0, 0, .15) 0 1px 3px;
 }
 
-ul#results-list {
+.results-list {
   list-style: none;
-  width: calc(100% - 10px);
-  margin-top: 4px;
+  width: 100%;
   border: 1px solid #ababab;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, .15) 0 1px 3px;
+  background-color: #ffffff;
+  padding: 0;
 }
 
-ul#results-list li {
+.results-list li {
   padding: 8px;
   cursor: pointer;
   border-top: 1px solid #cdcdcd;
   transition: background-color .3s ease-in-out;
 }
 
-ul#results-list li:hover {
+.results-list li:hover {
   background-color: #f7f7f7;
 }
 
-ul#results-list li:first-child {
+.results-list li:first-child {
   border-top: none;
 }
 
-ul#results-list li h3, ul#results-list li h4 {
-  transition: color .3s ease-in-out;
-  color: #333;
-  line-height: 1.2;
+.results-list .result a {
+  text-decoration: none;
 }
 
-ul#results-list li:hover h3, ul#results-list li:hover h4 {
-  color: #3b3b3b;
-  font-weight: 700;
+.no-nightline h2 {
+  font-size: 20px;
 }
+
+.no-nightline p {
+  line-height: normal;
+  padding: 0px 0px 10px 0px;
+}
+
 </style>

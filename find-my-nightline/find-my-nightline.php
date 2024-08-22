@@ -18,7 +18,7 @@
  */
 
 define( 'NLA_FIND_MY_NIGHTLINE__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'NLA_FIND_MY_NIGHTLINE__PLUGIN_VER', '0.1.1' );
+define( 'NLA_FIND_MY_NIGHTLINE__PLUGIN_VER', '0.2.0' );
 
 if ( ! function_exists( 'add_action' ) ) {
 	echo "Hello! I'm just a plugin. Not much I can do when called directly.";
