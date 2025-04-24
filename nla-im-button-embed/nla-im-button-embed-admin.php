@@ -123,10 +123,10 @@ function nla_im_embed_plugin_setting( $args ) {
 /**
  * Render a text field for the settings page.
  *
- * @param mixed $code
- * @param mixed $value
+ * @param mixed       $code
+ * @param mixed       $value
  * @param null|string $description
- * @param string $size
+ * @param string      $size
  *
  * @return void
  */
