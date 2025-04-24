@@ -75,7 +75,7 @@ add_action( 'admin_init', 'nla_im_register_settings' );
 /**
  * Validate the settings for the IM Embed plugin.
  *
- * @param array<string, mixed> $input
+ * @param array<string, mixed> $input The input from the settings form.
  *
  * @return array<string, mixed>
  */
@@ -84,7 +84,7 @@ function nla_im_embed_plugin_options_validate( $input ) {
 
 	foreach ( array_keys( nla_im_get_options() ) as $key ) {
 		$value             = trim( $input[ $key ] ?? '' );
-		$new_input[ $key ] = $value ?: null;
+		$new_input[ $key ] = ! empty( $value ) ? $value : null;
 	}
 
 	if ( $new_input['base_url'] && substr( $new_input['base_url'], -1 ) !== '/' ) {
@@ -106,7 +106,7 @@ function nla_im_embed_plugin_section_text() {
 /**
  * Render the settings field for the IM Embed plugin.
  *
- * @param array<string, mixed> $args
+ * @param array<string, mixed> $args The arguments for the settings field.
  *
  * @return void
  */
@@ -123,10 +123,10 @@ function nla_im_embed_plugin_setting( $args ) {
 /**
  * Render a text field for the settings page.
  *
- * @param mixed       $code
- * @param mixed       $value
- * @param null|string $description
- * @param string      $size
+ * @param mixed       $code The code for the setting.
+ * @param mixed       $value The value for the setting.
+ * @param null|string $description The description for the setting.
+ * @param string      $size The size of the text field.
  *
  * @return void
  */
