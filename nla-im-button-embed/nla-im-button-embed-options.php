@@ -1,5 +1,15 @@
 <?php
+/**
+ * Options for the IM Embed plugin.
+ *
+ * @package NLA_IM_Embed
+ */
 
+/**
+ * Get the options for the IM Embed plugin.
+ *
+ * @return array<string, array<string, string|array<string>>>
+ */
 function nla_im_embed_config_options() {
 	return array(
 		'base_url'    => array(
