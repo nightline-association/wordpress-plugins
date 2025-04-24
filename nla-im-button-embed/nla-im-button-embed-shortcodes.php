@@ -4,7 +4,7 @@ require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
 
 /** @throws \JsonException */
 function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag = '' ) {
-	 // Normalize attribute keys, lowercase.
+	// Normalize attribute keys, lowercase.
 	$atts = array_change_key_case( (array) $atts );
 
 	// Override default attributes with user attributes.
