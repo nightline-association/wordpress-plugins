@@ -1,5 +1,14 @@
 {
-  "name": "nightline-association/wordpress-plugins",
+  "name": "threeringscic/wordpress-plugins",
+  "authors": [
+    {
+      "name": "Three Rings CIC",
+      "homepage": "https://www.threerings.org.uk"
+    }
+  ],
+  "support": {
+    "email": "support@threerings.org.uk"
+  },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7",
     "wp-coding-standards/wpcs": "^3.0"
