@@ -9,5 +9,13 @@
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
-  }
+  },
+    "scripts": {
+        "phpcs": [
+          "phpcs --standard=WordPress --extensions=php --ignore=vendor,tests ."
+        ],
+        "phpcbf": [
+          "phpcbf --standard=WordPress --extensions=php --ignore=vendor,tests ."
+        ]
+    }
 }
