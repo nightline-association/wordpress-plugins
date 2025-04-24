@@ -8,7 +8,7 @@ Author:       Three Rings CIC
 Author URI:   https://www.threerings.org.uk
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-*/
+ */
 
 define( 'NLA_TOOLS__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'NLA_TOOLS__PLUGIN_VER', '0.2.2' );

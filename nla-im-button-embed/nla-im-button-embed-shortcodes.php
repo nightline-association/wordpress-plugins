@@ -2,7 +2,7 @@
 
 require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
 
-define ( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
+define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
 
 /** @throws \JsonException */
 function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag = '' ) {
