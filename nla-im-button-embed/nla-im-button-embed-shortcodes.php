@@ -5,10 +5,6 @@
  * @package NLA_IM_Embed
  */
 
-require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
-
-define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
-
 /**
  * Shortcode to embed an IM button.
  *
@@ -74,4 +70,7 @@ function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag =
 	return '';
 }
 
+require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
+
+define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
 add_shortcode( 'im_embed_btn', 'nla_im_button_embed_shortcode' );

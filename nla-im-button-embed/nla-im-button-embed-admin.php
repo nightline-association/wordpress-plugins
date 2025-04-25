@@ -5,9 +5,6 @@
  * @package NLA_IM_Embed
  */
 
-require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
-require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-options.php';
-
 /**
  * Add the settings page to the admin menu.
  *
@@ -23,6 +20,8 @@ function nla_im_add_settings_page() {
 	);
 }
 
+require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
+require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-options.php';
 add_action( 'admin_menu', 'nla_im_add_settings_page' );
 
 /**

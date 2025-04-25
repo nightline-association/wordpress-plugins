@@ -5,8 +5,6 @@
  * @package NLA_IM_Embed
  */
 
-require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-options.php';
-
 /**
  * Validate the settings for the IM Embed plugin.
  *
@@ -23,3 +21,5 @@ function nla_im_get_options() {
 
 	return $return_options;
 }
+
+require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-options.php';
