@@ -2,9 +2,11 @@
 
 require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
 
+define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
+
 /** @throws \JsonException */
 function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag = '' ) {
-	 // Normalize attribute keys, lowercase.
+	// Normalize attribute keys, lowercase.
 	$atts = array_change_key_case( (array) $atts );
 
 	// Override default attributes with user attributes.
@@ -24,7 +26,7 @@ function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag =
 	}
 
 	$options  = nla_im_get_options();
-	$base_url = $options['base_url'] ?: 'https://portal.nightline.ac.uk/im/';
+	$base_url = $options['base_url'] ?: DEFAULT_PORTAL_URI;
 	$base_url = "{$base_url}{$im_code}";
 
 	$response = wp_remote_get( "{$base_url}?format=json" );
