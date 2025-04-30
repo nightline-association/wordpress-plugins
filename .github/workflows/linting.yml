@@ -1,12 +1,6 @@
 name: PHP Linting (WordPress Coding Standards, PHPCS/PHPCBF)
 
-on:
-  push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
+on: [push, pull_request]
 
 jobs:
   phpcs-phpcbf:
