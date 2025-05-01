@@ -1,10 +1,21 @@
 <?php
+/**
+ * Shortcodes for the IM Embed plugin.
+ *
+ * @package NLA_IM_Embed
+ */
 
-require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
-
-define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
-
-/** @throws \JsonException */
+/**
+ * Shortcode to embed an IM button.
+ *
+ * @throws \JsonException If JSON decoding fails.
+ *
+ * @param array<string, string> $atts    Shortcode attributes.
+ * @param string|null           $content Shortcode content.
+ * @param string|null           $tag     Shortcode tag.
+ *
+ * @return string HTML for the IM button.
+ */
 function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag = '' ) {
 	// Normalize attribute keys, lowercase.
 	$atts = array_change_key_case( (array) $atts );
@@ -26,7 +37,7 @@ function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag =
 	}
 
 	$options  = nla_im_get_options();
-	$base_url = $options['base_url'] ?: DEFAULT_PORTAL_URI;
+	$base_url = ! empty( $options['base_url'] ) ? $options['base_url'] : DEFAULT_PORTAL_URI;
 	$base_url = "{$base_url}{$im_code}";
 
 	$response = wp_remote_get( "{$base_url}?format=json" );
@@ -58,4 +69,8 @@ function nla_im_button_embed_shortcode( $atts = array(), $content = null, $tag =
 
 	return '';
 }
+
+require_once NLA_TOOLS__PLUGIN_DIR . 'nla-im-button-embed-functions.php';
+
+define( 'DEFAULT_PORTAL_URI', 'https://3rportal.org.uk/im/' );
 add_shortcode( 'im_embed_btn', 'nla_im_button_embed_shortcode' );
